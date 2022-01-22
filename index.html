@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CodePro.vn - CyberSoft.edu.vn</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!--===============================================================================================-->
+    <!-- Font Awesome 5  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <div class="container-contact100">
+      <div
+        class="contact100-map"
+        id="google_map"
+        data-map-x="40.722047"
+        data-map-y="-73.986422"
+        data-pin="images/icons/map-marker.png"
+        data-scrollwhell="0"
+        data-draggable="1"
+      ></div>
+
+      <div class="contact100-more">
+        <i class="zmdi zmdi-phone-in-talk"></i>
+        (+84) 961.05.10.14
+      </div>
+
+      <div class="wrap-contact100">
+        <div>
+          <img
+            src="images/cybersoft.png"
+            alt="Front End CyberSoft"
+            width="40%"
+          />
+          <span style="padding: 20px"></span>
+          <img src="images/codepro.png" alt="Front End CyberSoft" width="30%" />
+
+          <div style="clear: both"></div>
+          <span class="contact100-form-title"> TÍNH CƯỚC UBER </span>
+          <h2>Vui lòng chọn loại xe:</h2>
+          <ul>
+            <li class="type">
+              <input id="uberX" type="radio" name="selector" checked />
+              <label for="uberX">Uber X</label>
+              <div class="check"></div>
+            </li>
+
+            <li class="type">
+              <input id="uberSUV" type="radio" name="selector" />
+              <label for="uberSUV">Uber SUV</label>
+              <div class="check"></div>
+            </li>
+
+            <li class="type">
+              <input id="uberBlack" type="radio" name="selector" />
+              <label for="uberBlack">Uber Black</label>
+              <div class="check"></div>
+            </li>
+          </ul>
+        </div>
+        <div style="clear: both"></div>
+
+        <form class="contact100-form">
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <h2>Nhập vào số KM</h2>
+            <input
+              id="soKM"
+              class="input100"
+              type="text"
+              name="name"
+              placeholder="Số KM ..."
+            />
+            <span class="focus-input100"></span>
+            <h5 class="text-danger" id="kmWarn"></h5>
+          </div>
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <h2>Nhập thời gian chờ</h2>
+            <input
+              id="thoiGianCho"
+              class="input100"
+              type="text"
+              name="name"
+              placeholder="Thời gian chờ  ..."
+            />
+            <span class="focus-input100"></span>
+            <h5 class="text-danger" id="timeWarn"></h5>
+          </div>
+
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button id="tinhTien" type="button" class="contact100-form-btn">
+              TÍNH TIỀN
+            </button>
+          </div>
+          <div class="wrap-contact100-form-btn">
+            <div class="contact100-form-bgbtn"></div>
+            <button
+              id="inHoaDon"
+              type="button"
+              class="contact100-form-btn"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+            >
+              IN HÓA ĐƠN
+            </button>
+          </div>
+        </form>
+
+        <div style="clear: both"></div>
+        <div id="divThanhTien" class="dongia">
+          <h2>
+            Thành tiền:
+            <span id="xuatTien" class="xuatTien"></span>
+            VNĐ
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div
+            class="modal-header text-center text-weight-bolder text-white"
+            style="background-color: peru"
+          >
+            <div
+              class="modal__header-content d-flex justify-content-between align-content-center"
+            >
+              <div class="text-left flex-fill pt-2">
+                <img
+                  src="images/cybersoft.png"
+                  alt="Front End CyberSoft"
+                  width="60%"
+                />
+              </div>
+              <div class="flex-fill">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                  CYBER UBER
+                </h5>
+                <p>112 Cao Thang, Ward 4, District 3</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="modal__body-title text-center">
+                <h4 class="text-uppercase px-4 font-weight-bolder">HÓA ĐƠN CƯỚC PHÍ UBER</h4>
+              </div>
+              <div class="d-flex justify-content-between align-content-center">
+                <p id="date">Date: </p>
+                <p id="time">Time: </p>
+              </div>
+              <div class="d-flex justify-content-between align-content-center">
+                <p> Loại xe:</p>
+                <p id="billCar"></p>
+              </div>
+
+              <hr />
+
+              <div
+                id="billCate"
+                class="d-flex justify-content-between align-content-center"
+              >
+                <h6>Nội dung</h6>
+                <h6>Số lượng</h6>
+                <h6>Đơn giá</h6>
+                <h6>Thành tiền</h6>
+              </div>
+
+              <hr />
+
+              <div
+                id="billDis"
+                class="d-flex justify-content-between align-content-center"
+              >
+                <p>Số KM</p>
+                <p id="billKM" class="pl-3"></p>
+                <p></p>
+                <p id="billKMAmt" class="text-right"></p>
+              </div>
+              <div
+                id="billMin"
+                class="d-flex justify-content-between align-content-center"
+              >
+                <p>Thời gian chờ</p>
+                <p id="billTime" class="pl-3"></p>
+                <p id="billTimeOne" class="pl-4"></p>
+                <p id="billTimeAmout" class="text-right"></p>
+              </div>
+
+              <hr />
+
+              <div
+                class="billTamTinh d-flex align-content-center justify-content-between"
+              >
+                <p>Tạm tính:</p>
+                <p id="billTotalAmt"></p>
+              </div>
+
+              <div
+                class="billTotal d-flex align-content-center justify-content-between"
+              >
+                <p>Tổng tiền:</p>
+                <p id="billFinalTotal"></p>
+              </div>
+
+              <br />
+
+              <p class="text-center font-italic">Cám ơn Quý khách đã sử dụng dịch vụ của chúng tôi</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-dismiss="modal">
+              Return
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="js/map-custom.js"></script>
+    <!--===============================================================================================-->
+    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js/validation.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
