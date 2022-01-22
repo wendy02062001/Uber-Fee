@@ -5,22 +5,9 @@ var uber = {
     distancePrice: 0,
     waitPriceUnit: 0,
     waitTimePrice: 0,
-    totalAmt: 0,
-
-    // checkValid: function (dInput, tInput) {
-    //     if (this.distance < 0 || this.waitTimewaitTime < 0 || dInput.value.trim() === "" || tInput.value.trim() === ""
-    //         || dInput.value.trim().match(/^[0-9.,\b]+$/) == null || tInput.value.trim().match(/^[0-9.,\b]+$/) == null) {
-    //         alert('Hãy điền các thông tin với giá trị dương');
-    //         if (tInput.value.trim() === "" || this.waitTime < 0 || tInput.value.trim().match(/^[0-9.,\b]+$/) == null) tInput.focus();
-    //         else dInput.focus();
-    //         return false;
-    //     } return true;
-
-    // }
+    totalAmt: 0
 }
 
-var validate = new Validation();
-var valid = true;
 
 document.getElementById('tinhTien').onclick = function () {
     uber.carType = document.querySelector('input[name="selector"]:checked').id;
@@ -30,11 +17,11 @@ document.getElementById('tinhTien').onclick = function () {
     var distanceInput = document.getElementById('soKM');
     var waitTimeInput = document.getElementById('thoiGianCho');
 
-    // var isValid = uber.checkValid(distanceInput, waitTimeInput);
+    
+    var validate = new Validation();
+    var isValid = true;
 
-valid &= validate.checkValid(distanceInput.value, '#kmWarn');
-
-console.log(distanceInput.value);
+    isValid &= validate.checkValid(distanceInput.value, '#kmWarn') & validate.checkValid(waitTimeInput.value, '#timeWarn');
 
     if (isValid) {
         if (uber.carType === 'uberX') {
